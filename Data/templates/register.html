@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html{
+            background-image: url("https://imgs.search.brave.com/kXV2WaFXShNJimJqC63tIgFzr80EUb7VQlb6KNzSi6w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ibHVlLXNreV84/NzM5NC01NTI3Lmpw/Zz9zaXplPTYyNiZl/eHQ9anBn");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body >
+    <style>
+        a{
+            color: whitesmoke;
+            font:bold;
+            font-size: medium;
+        }
+        p{
+            font:bold;
+            font-size: large;
+            color: red;
+        }
+    </style>
+    <script>
+        function register(){
+            const user=document.getElementById("user");
+            const pass= document.getElementById("pass");
+            const email= document.getElementById("eml");
+            const Address = document.getElementById("address");
+            const phone= document.getElementById("ph");
+            document.getElementById("reg").innerHTML="<h2>Registration Successful...!<h2>"
+
+        }
+    </script>
+    <center>
+        <p >{{datab}}</p>
+    <fieldset style="width:200px;color: aliceblue;font-size: 20px; height: 500px; padding-top: 45px;border: 2px transparent;">
+        <form method="get" action="{% url 'my_view'%}">
+            <label for="user">Username:</label>
+            <input type="text" name="user" id="user" required><br><br></input> 
+            Password:<input type="password" name="pass" required><br><br></input>
+            email:<input type="email" name="email" required><br><br></input>
+            phone:<input type="phone" name="phone" maxlength="10" required><br><br></input>
+            Address:<textarea type="text" name="address" ></textarea><br><br>
+            <input type="submit" value="Sign up">
+            or&nbsp;<a href="/login/"> login>></a>
+        </form>
+    </fieldset>
+    </center>
+</body>
+</html>
