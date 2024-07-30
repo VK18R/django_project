@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+            background-image:linear-gradient(lightblue,blue);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        a{
+            color:orangered
+        }
+        p{
+            color:red;
+            font :italic,
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <div style="padding-top: 200px;">
+        <fieldset style="width:400px;height: 150px;padding-top: 25px;border: 2px solid black;">
+            <legend>Login</legend>
+            <form method="get" action="{% url 'submit' %}">
+                {% csrf_token %}
+                UserName: <input type="text" id="user" name="user" required><br><br>
+                password: <input type="password" id="pswd" name="pswd" required><br><br>
+                <input type="submit" value="Login"/>
+                <p>{{Invalid}} </p>
+            </form>
+        </fieldset>
+        <p>or &nbsp; <a href="/register/"> Sign up</a></p>
+        </div>
+    </center>
+</body>
+</html>  
