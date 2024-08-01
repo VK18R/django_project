@@ -15,11 +15,10 @@ def submit(request):
         user=request.GET.get("user")
         pswd=request.GET.get("pswd")
         C1=Contact.objects.filter(name=user,password=pswd).values()
-        db=Contact.objects.all().values()
         if C1:
             context={
                 "user":user,
-                "username": db,
+                "username": C1,
                 }
             return HttpResponse(template.render(context,request))
         else:
