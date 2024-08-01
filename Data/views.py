@@ -38,6 +38,8 @@ def my_view(request):
         field_3=request.GET.get('email')
         field_4=request.GET.get('pass')
         field_5=request.GET.get('phone')
+        if field_2=="":
+            field_2="NA"
         new_insta=Contact(name=field_1,email=field_3,password=field_4,phone=field_5,address=field_2)
         new_insta.save()
         context={
